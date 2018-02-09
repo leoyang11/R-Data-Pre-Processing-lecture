@@ -68,6 +68,19 @@ fin %>% filter(!is.na(fin$Expenses)) %>% group_by(Industry) %>% summarise(exp_me
 ## Expenses:: insert median value
 fin[!complete.cases(fin$Expenses) & fin$Industry == "Construction","Expenses"] <- 4506976
 
+#### check missing value
+fin[!complete.cases(fin),]
+
+## Profit:: Revenue - Expenses
+fin[!complete.cases(fin$Profit),"Profit"] <- fin[!complete.cases(fin$Profit),"Revenue"] - fin[!complete.cases(fin$Profit),"Expenses"]
+
+## Expenses:: Revenue - Profit
+fin[!complete.cases(fin$Expenses),"Expenses"] <- fin[!complete.cases(fin$Expenses),"Revenue"] - fin[!complete.cases(fin$Expenses),"Profit"]
+
+
+
+
+
 
 
 
