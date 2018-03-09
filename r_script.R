@@ -1,4 +1,6 @@
 
+#### Data Preparation section
+
 library(dplyr)
 setwd("C:/Users/SKTelecom/Documents/data analysis/R-Data-Pre-Processing-lecture")
 
